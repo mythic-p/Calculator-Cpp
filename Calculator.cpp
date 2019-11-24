@@ -111,7 +111,7 @@ void Calculator::infixToPostfix(const char* infixStr)
 								while (tmpStack.size() > 0)
 								{
 									priTopOp = getPriority(tmpStack.top());
-									if (priCurOp > priTopOp || tmpStack.top() == '(')
+									if (priCurOp >= priTopOp || tmpStack.top() == '(')
 									{
 										tmpStack.push(infixStr[i]);
 										break;
