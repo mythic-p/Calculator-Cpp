@@ -7,7 +7,8 @@
 int main(int argc, char** argv) {
 	std::string str;
 	std::cout << "Input an infix expression: ";
-	std::cin >> str;
+	std::getline(std::cin, str);
+	str.append("#");
 	Calculator calculator(str.c_str());
 	std::cout << "Result is: " << calculator.calculate();
 	return 0;

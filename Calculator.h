@@ -6,6 +6,7 @@
 #include <string>
 #include <cstring>
 #include <cmath>
+#include <queue>
 
 class Calculator
 {
@@ -15,15 +16,15 @@ class Calculator
 	protected:
 		
 	private:
-		std::string infixToPostfix(const char* infixStr);
+		void infixToPostfix(const char* infixStr);
 		int getPriority(char c);
 		bool isNumber(char c);
 		bool isOperator(char c);
 		bool isSpace(char c);
 	private:
 		const char* calcStr;
-		std::stack<double> numStack;
-		std::stack<std::string> postfixStack;
+		std::stack<int> numStack;
+		std::queue<std::string> postfixQueue;
 };
 
 #endif
